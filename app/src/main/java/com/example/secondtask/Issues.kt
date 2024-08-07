@@ -21,8 +21,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.math.max
 
 
 data class Issue(
@@ -32,12 +34,12 @@ data class Issue(
     val status: String
 )
 val sampleIssues = listOf(
-    Issue("Bump pyarrow from 7...", "NONE", "2023-11-9, 23:0 PM", "Open"),
+    Issue("Bump pyarrow from 745584dffh", "NONE", "2023-11-9, 23:0 PM", "Open"),
     Issue("Français", "NONE", "2023-11-2, 9:38 AM", "Open"),
-    Issue("Bump werkzeug from ...", "NONE", "2023-10-25, 18:52 PM", "Open"),
-    Issue("Bump urllib3 from 1.2...", "NONE", "2023-10-17, 22:59 PM", "Open"),
-    Issue("ORQA fine tuning with...", "NONE", "2023-10-9, 15:3 PM", "Open"),
-    Issue("Bump pillow from 9.2...", "NONE", "2023-10-4, 0:35 AM", "Open")
+    Issue("Bump werkzeug from 4685555585", "NONE", "2023-10-25, 18:52 PM", "Open"),
+    Issue("Bump urllib3 from 1.2.3588858788558", "NONE", "2023-10-17, 22:59 PM", "Open"),
+    Issue("ORQA fine tuning with using 25885", "NONE", "2023-10-9, 15:3 PM", "Open"),
+    Issue("Bump pillow from 9.2.3.68585688", "NONE", "2023-10-4, 0:35 AM", "Open")
 )
 @Composable
 fun IssueItem(issue: Issue) {
@@ -55,7 +57,7 @@ fun IssueItem(issue: Issue) {
                     modifier = Modifier
                         .width(30.dp)
                         .height(50.dp))
-                Text(text = issue.title, fontSize = 20.sp, fontWeight = FontWeight.Bold
+                Text(text = issue.title, fontSize = 20.sp, fontWeight = FontWeight.Bold, maxLines = 1,overflow = TextOverflow.Ellipsis
                 , modifier = Modifier.width(300.dp))
 //              Spacer(modifier = Modifier.width(70.dp))
                 Text(text = issue.status,fontSize = 14.sp ,

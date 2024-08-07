@@ -40,7 +40,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-
     Scaffold(
         topBar = {
             AppBar(title = "Issues")
